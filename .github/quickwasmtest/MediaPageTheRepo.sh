@@ -78,7 +78,7 @@ if [[ "$mode" == "--publish" ]]; then
   git -C "$repo_root" fetch upstream --tags '+refs/heads/main:refs/remotes/upstream/main'
   git -C "$repo_root" fetch origin --tags
   git -C "$repo_root" switch -C main "${GITHUB_SHA:-HEAD}"
-  git -C "$repo_root" merge --no-edit upstream/main
+  git -C "$repo_root" merge --no-edit -m "Sync upstream main after successful MediaPager WASM build [skip ci]" upstream/main
   git -C "$repo_root" push origin HEAD:main
   git -C "$repo_root" push origin --tags
   release_tag="$source_tag.mediapager"
