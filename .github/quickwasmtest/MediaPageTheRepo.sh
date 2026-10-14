@@ -18,7 +18,7 @@ repo_root="$(git -C "$script_dir/../.." rev-parse --show-toplevel)"
 patcher="$script_dir/patch-web-ui.py"
 trunk_version="0.21.14"
 craft_fonts_commit="3d9ab3a132ed0eff457e424226a435a901da30d3"
-patch_version="discord-promotions-hidden-v3"
+patch_version="mediapager-web-integration-v1"
 artifact_format="quickwasmtest-web-v1"
 if [[ -z "$source_tag" ]]; then source_tag="$(gh api "repos/$upstream/releases/latest" --jq .tag_name)"; fi
 if ! git check-ref-format "refs/tags/$source_tag"; then printf 'Invalid upstream release tag: %s\n' "$source_tag" >&2; exit 2; fi
